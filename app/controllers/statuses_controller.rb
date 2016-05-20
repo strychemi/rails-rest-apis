@@ -1,6 +1,8 @@
 class StatusesController < ApplicationController
   def index
-    @statuses = twitter_client.user_timeline("strychemi", count: 5)
+    twitter = TwitterAPI.new.twitter_client
+
+    @statuses = twitter.user_timeline("strychemi", count: 5)
     respond_to do |format|
       format.html
       format.json { render json: @statuses }
