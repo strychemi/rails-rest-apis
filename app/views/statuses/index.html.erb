@@ -1,5 +1,8 @@
 <h1>Recent Tweets by @strychemi</h1>
 
 <% @statuses.each do |status| %>
-  <div><%= status %></div>
+  <span>
+    <div><%= status.text %></div>
+    <div><%= status.created_at %></div>
+  </span>
 <% end %>
